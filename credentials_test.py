@@ -56,6 +56,25 @@ class test_credentials(unittest.TestCase):
         self.assertEqual(found_credentials.account_name,
                          test_credentials.account_name)
 
+    def test_display_credentials(self):
+        '''
+        Test to display a accounts for a user
+        '''
+        self.assertEqual(Credentials.display_accounts(),
+                         Credentials.credentials_list)
+
+    def test_delete_credentials(self):
+        '''
+        Tests for deletion of a selected account from the list
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(
+            'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
+        test_credentials.save_credentials()
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
+    
+
 
 if __name__ == '__main__':
     unittest.main()
