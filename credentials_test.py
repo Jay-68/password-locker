@@ -1,6 +1,7 @@
 import unittest
 from credentials import Credentials
 
+
 class test_credentials(unittest.TestCase):
     '''
     This test class defines the test cases for the credentials class.
@@ -31,6 +32,29 @@ class test_credentials(unittest.TestCase):
         '''
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
+
+    def test_credentials_exist(self):
+        '''
+        This test checks if a username credentials exist
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(
+            'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
+        test_credentials.save_credentials()
+        credentials_exist = Credentials.credentials_exists('facebook')
+        self.assertTrue(credentials_exist)
+
+    def test_find_credentials_by_account_name(self):
+        '''
+        Method checks to find a user credentials by the user account
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(
+            'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
+        test_credentials.save_credentials()
+        found_credentials = Credentials.find_by_account_name('facebook')
+        self.assertEqual(found_credentials.account_name,
+                         test_credentials.account_name)
 
 
 if __name__ == '__main__':
