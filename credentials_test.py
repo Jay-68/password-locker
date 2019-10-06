@@ -26,6 +26,13 @@ class test_credentials(unittest.TestCase):
         '''
         Credentials.credentials_list = []
 
+    def test_save_credentials(self):
+        '''
+        This tests if the new credentials are added into the credentials list
+        '''
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
