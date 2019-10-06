@@ -23,6 +23,12 @@ class test_user(unittest.TestCase):
         self.assertEqual(self.new_user.username, 'Jay-68')
         self.assertEqual(self.new_user.password, '123456')
 
+    def tearDown(self):
+        '''
+          The test case method cleans up after each test has been run
+          '''
+        User.user_list = []
+
 
 if __name__ == '__main__':
     unittest.main()

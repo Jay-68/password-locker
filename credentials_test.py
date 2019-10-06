@@ -20,6 +20,12 @@ class test_credentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.email, 'face@email.com')
         self.assertEqual(self.new_credentials.password, '123qwerty')
 
+    def tearDown(self):
+        '''
+        The test case method cleans up after each test has been run
+        '''
+        Credentials.credentials_list = []
+
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

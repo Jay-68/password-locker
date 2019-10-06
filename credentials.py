@@ -10,4 +10,4 @@ class Credentials:
         self.password = password
 
 
-cred_list = []
+credentials_list = []
