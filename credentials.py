@@ -1,3 +1,6 @@
+import random
+
+
 class Credentials:
     '''
     This class creates new instances of the class Credentials
@@ -51,7 +54,17 @@ class Credentials:
             Full credentials that matches the account_name.
         '''
         for credentials in cls.credentials_list:
-            if credentials.account_name==account_name:
+            if credentials.account_name == account_name:
                 return credentials
+
     @classmethod
-    def generate_password(cls,username)
+    def generate_password(cls, username):
+        '''
+        This method generates a random password for a new user profile
+        '''
+        letters = username[1:4]
+        number_1 = str(random.randint(0, 9))
+        number_2 = str(random.randint(9, 16))
+        gen_pass = '@'+number_1+letters+number_2+'!'
+        letters.upper()
+        return gen_pass
