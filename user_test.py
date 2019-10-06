@@ -48,10 +48,20 @@ class test_user(unittest.TestCase):
         This test case checks if a user exists
         '''
         self.new_user.save_user()
-        test_user = User('John Doe', 'john@gmail.com', 'JDoe', '123qwerty')
+        test_user = User('John Doe', 'john@gmail.com', 'JDoe', 'qwerty')
         test_user.save_user()
         user_exists = User.user_exists('JDoe')
         self.assertTrue(user_exists)
+
+    def test_find_user_by_username(self):
+        '''
+        Tests for username and display the user credentials
+        '''
+        self.new_user.save_user()
+        test_user = User('John Doe', 'john@gmail.com', 'JDoe', 'qwerty')
+        test_user.save_user()
+        found_user = User.find_user_by_username('JDoe')
+        self.assertEqual(found_user.password, test_user.password)
 
 
 if __name__ == '__main__':
