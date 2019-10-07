@@ -67,7 +67,7 @@ def find_credentials(account_name):
     return Credentials.find_by_account_name(account_name)
 
 
-def genenerate_password(username):
+def generate_password(username):
 
     return Credentials.generate_password(username)
 
