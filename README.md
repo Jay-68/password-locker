@@ -1,64 +1,41 @@
-# password-locker
+# Password Locker
 
-## Author
-
- By **James Ngari**
-
+## Built By: [James Ngari](https://github.com/Jay-68)
 
 ## Description
+Password Locker is a terminal run python application that allows users to store details i.e. usernames and passwords of their various accounts.
 
- A simple Python Application which runs on the terminal for the purpose of a user to generate strong passwords and store them for various accounts.
+## Specifications
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Display codes for navigation | **In terminal: $./password-locker.py** | Welcome, choose an option: su-sign up, li-Log In, ex-Exit |
+| Create and display new accounts using the short codes | **Enter: add** | adds the accounts |
+| Exit application | **Enter: ex** | Exit the current navigation stage |
 
-## Setup/Installation Requirements
+## SetUp / Installation Requirements
+### Prerequisites
+* python3.6
+* pip
 
- Clone [This Repository](https://github.com/Jay-68/password-locker) and run the
-`run.py` file.
+### Cloning
+* In your terminal:
+        
+        $ git clone https://github.com/Jay-68/password-locker
+        $ cd Password-Locker
 
-<!-- ## Technical Requirements
+## Running the Application
+* To run the application, in your terminal:
 
-* Contains two classes:- User data and Credential data
-* Authenticates users to see their credentials
-* Contains docstrings to document methods and functions
-* Contains a test class for all the classes testing each individual method in a class
+        $ chmod +x password-locker.py
+        $ ./main.py
+        
+## Testing the Application
+* To run the tests for the class file:
 
-## User Stories
-
-> * A user can create an account with details such as login and password
-> * A user can generate passwors for a new account
-> * Store existing login credentials -->
-
+        $ python3.6 credentials_test.py
+        
 ## Technologies Used
+* Python3.6
 
- * Python3.6
-
-## Known Bugs
-
- It does not have bugs.But if any problems should occur, email me at <ngari.james.n@gmail.com>
-
-## Support and Contact Details
-
-You can reach out to me at <ngari.james.n@gmail.com>
-for Reviews, Advice, Collaborations and Comments.
-
-## Licence
-
-> MIT License
-
-Copyright (c) 2018 **Dev Sarah Marion**
- Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## License
+MIT &copy;2017 [James Ngari](https://github.com/Jay-68/)
