@@ -14,7 +14,7 @@ class Credentials:
 
     credentials_list = []
 
-    def save_credentials(self):
+    def save_new_credentials(self):
         '''
         Saves user credentials to the credentials_list
         '''
@@ -62,18 +62,11 @@ class Credentials:
         '''
         This method generates a random password for a new user profile
         '''
-        chars = 'abcdefghijklmnopqrstuvwxyz1234567890'
-        generate_password = ''
+        chars = 'abcdefghijklmnopqrstuvwxyz1234567890¬`!"£$%^&*()_@#~:;/.,<>'
+        gen_password = ''
         for c in range(10):
-            generate_password += random.choice(chars)
-        print(generate_password)
-
-        # letters = username[1:4]
-        # number_1 = str(random.randint(0, 9))
-        # number_2 = str(random.randint(9, 16))
-        # gen_pass = '@'+number_1+letters+number_2+'!'
-        # letters.upper()
-        # return gen_pass
+            gen_password += random.choice(chars)
+        print(gen_password)
 
 
 if __name__ == '__main__':

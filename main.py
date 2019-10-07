@@ -102,7 +102,7 @@ def main():
             print("Username:")
             username = input()
 
-            print("Enter Your Password")
+            print("Enter Your Password:")
             password = input()
 
             save_new_user(User(fullname, email, username, password))
@@ -115,12 +115,11 @@ def main():
             print("Login to your Password Locker account")
             print("-"*20)
 
-            print("Username.....")
+            print("Username:")
             search_user = input()
             if check_existing_user(search_user):
                 user_find = find_user(search_user)
-                # while True:
-                print("Password.....")
+                print("Enter password:")
                 password = input()
                 if password == user_find.password:
                     print("Welcome {}, you are logged in!".format(username))
@@ -130,7 +129,7 @@ def main():
                         print("Please use the following short codes:")
                         print("""
                         add - Add & save existing accounts, gen - Generate password for new account,
-                        disp - display accounts, del - Delete account, lo - Log out
+                        display - display accounts, del - Delete account, lo - Log out
                         """)
 
                         short_code = input().lower()
@@ -140,18 +139,17 @@ def main():
                             print("Add new account")
                             print("-"*10)
 
-                            print("Account Name.....")
+                            print("Account Name:")
                             account_name = input()
 
-                            print("Email Address.....")
+                            print("Email Address:")
                             email = input()
 
-                            print("Username.....")
+                            print("Username:")
                             username = input()
 
-                            print("Password.....")
+                            print("Password:")
                             password = input()
-
                             save_new_credentials(Credentials(
                                 account_name, email, username, password))
                             print('\n')
@@ -165,16 +163,16 @@ def main():
                                 "A random password will be created for this account")
                             print("-"*30)
 
-                            print("Account Name.....")
+                            print("Account Name:")
                             account_name = input()
 
-                            print("Email Address.....")
+                            print("Email Address:")
                             email = input()
 
-                            print("Username.....")
+                            print("Username:")
                             username = input()
-
-                            password = gen_password(username)
+# generate password error
+                            password = generate_password(username)
                             print("Your password is {}".format(password))
                             save_new_credentials(Credentials(
                                 account_name, email, username, password))
@@ -183,7 +181,7 @@ def main():
                                 "Your {} account has successfully been added!".format(account_name))
                             print('\n')
 
-                        elif short_code == 'disp':
+                        elif short_code == 'display':
                             if display_accounts():
                                 print('\n')
                                 print("Here is a list of all your accounts")
@@ -196,33 +194,32 @@ def main():
                             else:
                                 print('\n')
                                 print(
-                                    "You do not seem to have any contacts saved yet")
+                                    "You do not have any contacts saved yet")
                                 print('\n')
 
                         elif short_code == 'del':
                             print('\n')
                             print(
-                                "What is the name of the account you want to delete?...")
+                                "What is the name of the account you want to delete?")
                             account_name = input()
                             if find_credentials(account_name):
                                 delete_credentials = input()
                                 print('\n')
                                 print(
-                                    "Your {} account has successfully been deleted!".format(account_name))
+                                    "Your {} account has been deleted successfully!".format(account_name))
                                 print('\n')
 
                         elif short_code == 'lo':
                             print('\n')
-                            print("Sorry to see you go... Come back soon!")
+                            print("You have logged out successfully!")
                             print('\n')
                             break
 
                         else:
                             print('\n')
                             print(
-                                "I really didn't get that. Please use the short codes")
+                                "Use the provided short code to navigate the password locker")
                             print('\n')
-                            # break
 
                     else:
                         print("Incorrect password")
@@ -232,11 +229,11 @@ def main():
                     print("{} does not exist, please sign up.".format(username))
         elif short_code == 'ex':
             print("\n")
-            print("An interrupt detected...Exiting..")
+            print("Exiting...")
             print("\n")
-            break
+            # break
         else:
-            print("I really didn't get that. Please use the short codes")
+            print("Use the provided short code to navigate the password locker")
 
 
 if __name__ == '__main__':
