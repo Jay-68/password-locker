@@ -78,7 +78,7 @@ class Credentials:
         password = ''.join(genPassword)
         return password
 
-        print('Your password is {}'.format(password))
+        print('\n Your password is {}'.format(password))
 
 
 if __name__ == '__main__':
