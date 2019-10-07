@@ -1,5 +1,5 @@
 import random
-
+import unittest
 
 class Credentials:
     '''
@@ -62,9 +62,19 @@ class Credentials:
         '''
         This method generates a random password for a new user profile
         '''
-        letters = username[1:4]
-        number_1 = str(random.randint(0, 9))
-        number_2 = str(random.randint(9, 16))
-        gen_pass = '@'+number_1+letters+number_2+'!'
-        letters.upper()
-        return gen_pass
+        characters = 'abcdefghijklmnopqrstuvwxyz1234567890'
+        generate_password = ''
+        for c in range(10):
+            generate_password += random.choice(characters)
+        print(generate_password)
+
+        # letters = username[1:4]
+        # number_1 = str(random.randint(0, 9))
+        # number_2 = str(random.randint(9, 16))
+        # gen_pass = '@'+number_1+letters+number_2+'!'
+        # letters.upper()
+        # return gen_pass
+
+
+if __name__ == '__main__':
+    unittest.main()
