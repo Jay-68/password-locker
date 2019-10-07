@@ -70,15 +70,16 @@ class Credentials:
         password += random.choice(string.digits)
         password += random.choice(string.punctuation)
 
-        for i in range(10):
+        length=input('Select password length')
+        length=int(length)
+
+        for i in range(length):
             password += random.choice(randomSource)
 
         genPassword = list(password)
         random.SystemRandom().shuffle(genPassword)
         password = ''.join(genPassword)
         return password
-
-        print('\n Your password is {}'.format(password))
 
 
 if __name__ == '__main__':

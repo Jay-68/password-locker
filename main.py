@@ -171,9 +171,8 @@ def main():
 
                             print("Username:")
                             username = input()
-# generate password error
                             password = generate_password(username)
-                            print("Your password is {}".format(password))
+                            print("\n Your password is {} for the account {}".format(password,username))
                             save_new_credentials(Credentials(
                                 account_name, email, username, password))
                             print('\n')
@@ -189,21 +188,27 @@ def main():
 
                                 for credentials in display_accounts():
                                     print(
-                                        "{}, {}, {}, {}".format(credentials.account_name, credentials.email, credentials.username, credentials.password))
+                                        "Account name:{} \n Email: {} \n username: {} \n password: {}".format(credentials.account_name, credentials.email, credentials.username, credentials.password))
                                     print('\n')
                             else:
                                 print('\n')
                                 print(
                                     "You do not have any contacts saved yet")
                                 print('\n')
-
+# delete function error
                         elif short_code == 'del':
                             print('\n')
                             print(
                                 "What is the name of the account you want to delete?")
                             account_name = input()
                             if find_credentials(account_name):
-                                delete_credentials = input()
+                                # delete_credentials =  input()
+                                # for credentials in credentials_list:
+                                #   if credential==input():
+                                    
+                                #   else:
+                                #     print('No account by that name')
+                                  
                                 print('\n')
                                 print(
                                     "Your {} account has been deleted successfully!".format(account_name))
