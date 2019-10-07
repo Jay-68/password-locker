@@ -60,16 +60,16 @@ def check_existing_credentials(account_name):
     return Credentials.credentials_exists(account_name)
 
 
-def find_cred(account_name):
+def find_credentials(account_name):
     """
     Function that finds a user's credentials by account Name and returns the credentials
     """
     return Credentials.find_by_account_name(account_name)
 
 
-def gen_password(username):
+def genenerate_password(username):
 
-    return Credentials.gen_password(username)
+    return Credentials.generate_password(username)
 
 
 def display_accounts():
@@ -79,8 +79,6 @@ def display_accounts():
     return Credentials.display_accounts()
 
 
-
-# jjnbgjfub ytf
 def main():
     print("Welcome to Password Locker")
     print("-"*10)
@@ -95,28 +93,27 @@ def main():
             print("Sign up to create a Password Locker account")
             print("-"*20)
 
-            print("Fullname.....")
+            print("Enter fullname:")
             fullname = input()
 
-            print("Email Address.....")
+            print("Email Address:")
             email = input()
 
-            print("Username.....")
+            print("Username:")
             username = input()
 
-            print("Password.....")
+            print("Enter Your Password")
             password = input()
 
             save_new_user(User(fullname, email, username, password))
             print('\n')
-            print("Welcome {}, your account has successfully been created".format(username))
+            print(
+                "Welcome {}, your account has successfully been created".format(username))
             print('\n')
 
         elif short_code == 'li':
             print("Login to your Password Locker account")
             print("-"*20)
-
-            # while True:
 
             print("Username.....")
             search_user = input()
@@ -194,7 +191,7 @@ def main():
 
                                 for credentials in display_accounts():
                                     print(
-                                        "{}, {}, {}, {}".format(credentials.account_name,credentials.email,credentials.username,credentials.password))
+                                        "{}, {}, {}, {}".format(credentials.account_name, credentials.email, credentials.username, credentials.password))
                                     print('\n')
                             else:
                                 print('\n')

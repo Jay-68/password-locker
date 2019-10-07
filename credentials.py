@@ -62,10 +62,10 @@ class Credentials:
         '''
         This method generates a random password for a new user profile
         '''
-        characters = 'abcdefghijklmnopqrstuvwxyz1234567890'
+        chars = 'abcdefghijklmnopqrstuvwxyz1234567890'
         generate_password = ''
         for c in range(10):
-            generate_password += random.choice(characters)
+            generate_password += random.choice(chars)
         print(generate_password)
 
         # letters = username[1:4]
