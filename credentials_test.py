@@ -30,17 +30,17 @@ class test_credentials(unittest.TestCase):
         '''
         This tests if the new credentials are added into the credentials list
         '''
-        self.new_credentials.save_credentials()
+        self.new_credentials.save_new_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
     def test_credentials_exist(self):
         '''
         This test checks if a username credentials exist
         '''
-        self.new_credentials.save_credentials()
+        self.new_credentials.save_new_credentials()
         test_credentials = Credentials(
             'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
-        test_credentials.save_credentials()
+        test_credentials.save_new_credentials()
         credentials_exist = Credentials.credentials_exists('facebook')
         self.assertTrue(credentials_exist)
 
@@ -48,10 +48,10 @@ class test_credentials(unittest.TestCase):
         '''
         Method checks to find a user credentials by the user account
         '''
-        self.new_credentials.save_credentials()
+        self.new_credentials.save_new_credentials()
         test_credentials = Credentials(
             'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
-        test_credentials.save_credentials()
+        test_credentials.save_new_credentials()
         found_credentials = Credentials.find_by_account_name('facebook')
         self.assertEqual(found_credentials.account_name,
                          test_credentials.account_name)
@@ -67,10 +67,10 @@ class test_credentials(unittest.TestCase):
         '''
         Tests for deletion of a selected account from the list
         '''
-        self.new_credentials.save_credentials()
+        self.new_credentials.save_new_credentials()
         test_credentials = Credentials(
             'facebook', 'face@gmail.com', 'jay-68', '123qwerty')
-        test_credentials.save_credentials()
+        test_credentials.save_new_credentials()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
     
